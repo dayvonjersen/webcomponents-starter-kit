@@ -21,9 +21,9 @@ A working directory to create WebComponents with [Bosonic](http://bosonic.github
 
 ## Install
 
-	git clone git@github.com:generaltso/webcomponents-starter-kit
+    git clone git@github.com:generaltso/webcomponents-starter-kit
     cd webcomponents-starter-kit
-	npm install
+    npm install
     
 These readmes usually have a pretentious-looking file listing
 
@@ -56,21 +56,21 @@ Boilerplate available ([breakdown/explanation](#breakdown))
     
 ## Build it
 
-	./build_all_webcomponents.sh
+    ./build_all_webcomponents.sh
     
 Or individually
 
-	cd components-src && ./build.sh my-custom-element
+    cd components-src && ./build.sh my-custom-element
     
 Or don't use the shell scripts
 
-	node index.js my-custom-element
+    node index.js my-custom-element
 
 Or use [grunt-bosonic](https://github.com/bosonic/grunt-bosonic) or [yeoman-bosonic](https://github.com/bosonic/yeoman-bosonic) from the author and stop reading this.
 
 ## Use it in an html
 
-	<script src="bosonic-polyfills.js"></script>
+    <script src="bosonic-polyfills.js"></script>
     <script src="components/my-custom-element.js"></script>
     <link  href="components/my-custom-element.css" rel="stylesheet">
     
@@ -102,7 +102,7 @@ There's also Polymer and React.js (google them)
 
 **Start with an element tag**
 
-	<element name="your-custom-element">
+    <element name="your-custom-element">
 
 Yes, the spec has since removed the HTMLElementElement but Bosonic needs it.
 
@@ -118,17 +118,17 @@ My personal suggestion would be to prefix/namespace all custom elements you crea
     
 After compilation, all rules in this stylesheet will be prepended with **your-custom-element**, i.e.
 
-	button { border-radius: 2px; }
+    button { border-radius: 2px; }
     
 will become
 
-	your-custom-element button { border-radius: 2px; }
+    your-custom-element button { border-radius: 2px; }
     
 
 **Template for inner structure of element**
 
-	<template>
-	
+    <template>
+    
     </template>
 
 **Javascript**
@@ -173,30 +173,30 @@ The compiled JavaScript will turn the object definition into a *different* objec
 
 To get around this, I found having a utility function something like
 
-	function findParent(youarehere, targetPrototype) {
-    	var finding = youarehere.constructor.name;
+    function findParent(youarehere, targetPrototype) {
+        var finding = youarehere.constructor.name;
         for(;;) {
-        	if(youarehere === null || youarehere instanceof HTMLHtmlElement) {
-            		console.log("Could not find parent of " + finding + " matching " + targetPrototype.name);
+            if(youarehere === null || youarehere instanceof HTMLHtmlElement) {
+                    console.log("Could not find parent of " + finding + " matching " + targetPrototype.name);
                     break;
             }
             if(youarehere instanceof targetPrototype)
-            	return youarehere;
+                return youarehere;
             youarehere = youarehere.parentElement;
         }
     }
 
 Can then be applied to event handler callbacks
 
-	function clickHandler(evnt) {
-    	var parent = findParent(evnt.target,YourCustomElement);
+    function clickHandler(evnt) {
+        var parent = findParent(evnt.target,YourCustomElement);
         // use parent instead of this ...
              
     }
     
 Yes, after being document.registerElement()'d, your prototype will be named with **PascalCase** e.g.
 
-	<your-custom-element> => YourCustomElement
+    <your-custom-element> => YourCustomElement
 
 ## &lt;template&gt;
 
