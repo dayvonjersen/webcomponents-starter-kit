@@ -6,7 +6,7 @@ A working directory to create WebComponents with [Bosonic](http://bosonic.github
 
 ## Why
 
->Web Components" is not another term for [Google Polymer](https://www.polymer-project.org/). Polymer is a framework that is based on Web Components technologies. You can make and use Web Components without Polymer.
+>"Web Components" is not another term for [Google Polymer](https://www.polymer-project.org/). Polymer is a framework that is based on Web Components technologies. You can make and use Web Components without Polymer.
 
 
 ## Read first
