@@ -7,9 +7,6 @@
         "type": "git",
         "url":  "https://github.com/generaltso/webcomponents-starter-kit"
     },
-    "bugs": {
-        "url": "http://meta.bunzilla.ga/report/category/20"
-    },
     "keywords": [
         "webcomponents"
     ],
