@@ -5,7 +5,7 @@
     "author": "tso <tso@teknik.io>",
     "repository": {
         "type": "git",
-        "url":  "https://github.com/generaltso/webcomponents-starter-kit"
+        "url":  "https://github.com/dayvonjersen/webcomponents-starter-kit"
     },
     "keywords": [
         "webcomponents"

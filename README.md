@@ -21,7 +21,7 @@ A working directory to create WebComponents with [Bosonic](http://bosonic.github
 
 ## Install
 
-    git clone git@github.com:generaltso/webcomponents-starter-kit
+    git clone git@github.com:dayvonjersen/webcomponents-starter-kit
     cd webcomponents-starter-kit
     npm install
     
